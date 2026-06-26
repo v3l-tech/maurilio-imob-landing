@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+/* ========================================
+   Theme — Maurílio Martins Brand Tokens
+   ======================================== */
+@theme {
+  --color-brand-deep: #2D1B6B;
+  --color-brand-card: #1E1347;
+  --color-brand-navy: #1A2A4A;
+  --color-brand-gold: #C8922A;
+  --color-brand-gold-light: #F0C060;
+  --color-brand-text: #FFFFFF;
+  --color-brand-muted: #C4B8E8;
+  --color-brand-divider: #4A3A8A;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Custom animations */
+  --animate-fade-in-up: fade-in-up 0.7s ease-out forwards;
+  --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
+  --animate-counter: counter 1.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-brand-deep);
+  color: var(--color-brand-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Keyframe Animations
+   ======================================== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   Animation Utility Classes
+   ======================================== */
+.animate-section {
+  opacity: 0;
+}
+
+.animate-section.visible {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.animate-slide-left.visible {
+  animation: slide-in-left 0.7s ease-out forwards;
+}
+
+.animate-slide-right.visible {
+  animation: slide-in-right 0.7s ease-out forwards;
+}
+
+.animate-scale-in.visible {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.stagger-children.visible > .animate-section {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+/* Stagger children */
+.stagger-children.visible > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children.visible > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-children.visible > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-children.visible > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-children.visible > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-children.visible > *:nth-child(6) { animation-delay: 500ms; }
+
+/* ========================================
+   Respect Reduced Motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .animate-section,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in {
+    opacity: 1;
+    animation: none !important;
+  }
+
+  .stagger-children > * {
+    animation-delay: 0ms !important;
+    animation: none !important;
+    opacity: 1;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold-light);
+}
+
+/* ========================================
+   Gold Chevron Decorative Dividers
+   ======================================== */
+.chevron-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.chevron-divider::before,
+.chevron-divider::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-right: 2px solid var(--color-brand-gold);
+  border-bottom: 2px solid var(--color-brand-gold);
+  transform: rotate(-45deg);
+  opacity: 0.3;
+}
+
+.chevron-divider::before {
+  left: calc(50% - 40px);
+  top: -10px;
+}
+
+.chevron-divider::after {
+  left: calc(50% - 20px);
+  top: -10px;
+  opacity: 0.15;
+}
+
+/* ========================================
+   Service Card Hover Effects
+   ======================================== */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(200, 146, 42, 0.2), 0 0 60px rgba(200, 146, 42, 0.1);
+  border-color: var(--color-brand-gold);
+}
+
+/* ========================================
+   Glass Effect
+   ======================================== */
+.glass {
+  background: rgba(30, 19, 71, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ========================================
+   Gold Gradient Text
+   ======================================== */
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-brand-gold), var(--color-brand-gold-light), var(--color-brand-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Form Styles
+   ======================================== */
+.form-input {
+  background: rgba(45, 27, 107, 0.5);
+  border: 1px solid var(--color-brand-divider);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--color-brand-text);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.form-input::placeholder {
+  color: rgba(196, 184, 232, 0.5);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-brand-gold);
+  box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.15);
+}
+
+.form-input.error {
+  border-color: #ef4444;
+}
+
+/* ========================================
+   Radial Gradient Background
+   ======================================== */
+.bg-radial-brand {
+  background: radial-gradient(ellipse at 30% 20%, rgba(74, 58, 138, 0.4) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(26, 42, 74, 0.3) 0%, transparent 60%),
+              var(--color-brand-deep);
+}
