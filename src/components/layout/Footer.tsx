@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
+import logo from '../../assets/logo.png';
 
 const QUICK_LINKS = [
   { label: 'Início', href: '#hero' },
@@ -67,8 +68,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg border border-brand-gold/60 flex items-center justify-center bg-brand-deep/60">
-                <span className="font-display text-lg font-bold gold-gradient-text">MS</span>
+              <div className="w-10 h-10 rounded-lg border border-brand-gold/60 flex items-center justify-center bg-brand-deep/60 p-1">
+                <img src={logo} alt="Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <p className="font-display text-lg font-semibold text-brand-text">Maurílio Martins</p>
@@ -132,9 +133,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="flex items-center gap-2.5 text-sm text-brand-muted">
-                  <MapPin size={15} className="text-brand-gold shrink-0" />
-                  Sorriso - MT e Região
+                <span className="flex items-start gap-2.5 text-sm text-brand-muted">
+                  <MapPin size={15} className="text-brand-gold shrink-0 mt-0.5" />
+                  Rua dos desbravadores, nº 3021, escritório 301, Torre Canindé, Edifício Residencial Araras, Centro-Norte, CEP 78890-154, Sorriso - MT
                 </span>
               </li>
             </ul>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logo from '../../assets/logo.png';
 import { Menu, X } from 'lucide-react';
 import { useActiveSection } from '../../hooks/useAnimations';
 
@@ -58,8 +59,8 @@ export default function Header() {
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 rounded-lg border border-brand-gold/60 flex items-center justify-center bg-brand-card/80 group-hover:border-brand-gold-light transition-colors">
-              <span className="font-display text-lg font-bold gold-gradient-text">MS</span>
+            <div className="w-10 h-10 rounded-lg border border-brand-gold/60 flex items-center justify-center bg-brand-card/80 group-hover:border-brand-gold-light transition-colors p-1">
+              <img src={logo} alt="Logo" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block">
               <span className="font-display text-lg font-semibold text-brand-text tracking-wide">

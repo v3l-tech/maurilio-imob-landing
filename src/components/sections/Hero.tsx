@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import logo from '../../assets/logo.png';
 
 export default function Hero() {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -107,10 +108,8 @@ export default function Hero() {
                 {/* Inner ring */}
                 <div className="w-48 h-48 xl:w-60 xl:h-60 rounded-full border border-brand-gold/30 flex items-center justify-center">
                   {/* Logo */}
-                  <div className="w-32 h-32 xl:w-40 xl:h-40 rounded-full border-2 border-brand-gold/60 flex items-center justify-center bg-brand-card/50">
-                    <span className="font-display text-5xl xl:text-6xl font-bold gold-gradient-text">
-                      MS
-                    </span>
+                  <div className="w-32 h-32 xl:w-40 xl:h-40 rounded-full border-2 border-brand-gold/60 flex items-center justify-center bg-brand-card/50 overflow-hidden">
+                    <img src={logo} alt="Logo Maurílio Martins" className="w-full h-full object-contain" />
                   </div>
                 </div>
               </div>

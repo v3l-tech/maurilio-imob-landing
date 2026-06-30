@@ -18,9 +18,9 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 const CONTACT_CHANNELS = [
   {
     icon: MapPin,
-    label: 'Localização',
-    value: 'Sorriso - MT e Região',
-    href: '#',
+    label: 'Endereço',
+    value: 'Rua dos desbravadores, Nº 3021, escritório 301, Torre Canindé, Edifício Residencial Araras, CEP 78890-154, Sorriso - MT',
+    href: 'https://maps.google.com/?q=Rua+dos+desbravadores+3021+Centro-Norte+Sorriso+MT',
   },
   {
     icon: WhatsAppIcon,
@@ -115,6 +115,20 @@ export default function Contato() {
                 <WhatsAppIcon size={22} />
                 Conversar no WhatsApp
               </a>
+            </div>
+
+            {/* Mapa de Localização */}
+            <div className="mt-10 rounded-xl overflow-hidden border border-brand-gold/20 shadow-lg shadow-brand-deep/50 h-[250px]">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Rua%20dos%20desbravadores,%203021,%20Centro-Norte,%20Sorriso%20-%20MT&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Localização do Escritório"
+              ></iframe>
             </div>
           </div>
 
