@@ -158,7 +158,7 @@ export default function ContactForm() {
           <input
             id="city"
             type="text"
-            placeholder="Ex: Cuiabá - MT"
+            placeholder="Ex: Sorriso - MT"
             className={`form-input ${errors.city ? 'error' : ''}`}
             {...register('city')}
           />

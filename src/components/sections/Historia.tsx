@@ -19,9 +19,8 @@ export default function Historia() {
 
       <div
         ref={ref}
-        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
-          isVisible ? '' : 'opacity-0'
-        }`}
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isVisible ? '' : 'opacity-0'
+          }`}
       >
         {/* Section label */}
         <div className="flex items-center gap-3 mb-2">
@@ -39,7 +38,7 @@ export default function Historia() {
             <div className="relative">
               {/* Photo frame with golden border */}
               <div className="relative rounded-2xl overflow-hidden border border-brand-gold/20 shadow-2xl shadow-brand-deep/50">
-                <img 
+                <img
                   src={maurilioImage}
                   alt="Maurílio Martins - Perito Avaliador"
                   className="w-full h-full object-cover aspect-[3/4]"
@@ -70,18 +69,23 @@ export default function Historia() {
 
             <div className="space-y-5 text-brand-muted leading-relaxed">
               <p>
-                Com mais de 10 anos de atuação no mercado imobiliário de Mato Grosso, 
-                Maurílio Martins construiu sua carreira sobre dois pilares: o rigor técnico 
+                Com mais de 10 anos de atuação no mercado imobiliário de <strong>Sorriso-MT e região</strong>,
+                Maurílio Martins construiu sua carreira sobre dois pilares: o rigor técnico
                 exigido pela perícia e a confiança que só a experiência de campo proporciona.
               </p>
               <p>
-                Credenciado pelo CRECI-14851 e pelo CNAI-041040, atua como corretor e perito 
-                avaliador de imóveis, com especialidade em laudos técnicos para fins judiciais, 
-                inventários, garantias bancárias e operações de compra e venda.
+                Credenciado pelo CRECI-14851 e pelo CNAI-041040, atua como corretor e perito
+                avaliador de imóveis, com especialidade em operações de compra e venda.
               </p>
               <p>
-                Cada avaliação é conduzida com metodologia NBR 14.653, levantamento in loco e 
-                análise comparativa de mercado — garantindo laudos que resistem ao escrutínio 
+                Oferece assessoria completa na <strong>intermediação imobiliária</strong>,
+                atuando de forma estratégica para compradores e vendedores. Seu trabalho abrange a compra e venda
+                de casas, apartamentos, terrenos e áreas comerciais, garantindo negociações seguras, transparentes
+                e vantajosas para ambas as partes.
+              </p>
+              <p>
+                Cada avaliação é conduzida com metodologia NBR 14.653, levantamento in loco e
+                análise comparativa de mercado — garantindo laudos que resistem ao escrutínio
                 de peritos revisores, juízes e instituições financeiras.
               </p>
             </div>

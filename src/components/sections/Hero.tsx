@@ -17,7 +17,7 @@ export default function Hero() {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 bg-radial-brand" />
-      
+
       {/* Chevron decorations - left side */}
       <div className="absolute left-0 top-0 bottom-0 w-1/3 overflow-hidden pointer-events-none">
         {/* Multiple layered chevrons */}
@@ -64,16 +64,16 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-text leading-[1.1] mb-6">
-              Avaliações Imobiliárias com{' '}
+              Assessoria Imobiliária com vendas e{' '}
               <span className="gold-gradient-text">Respaldo Técnico</span>{' '}
-              e Validade Jurídica
+              de Validade Jurídica
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-brand-muted max-w-xl mb-10 leading-relaxed">
               Laudos precisos para compra, venda, inventário, processos judiciais e garantias
-              bancárias — emitidos por perito credenciado pelo CNAI e corretor registrado no
-              CRECI-MS.
+              bancárias em <strong>Sorriso-MT e região</strong> — emitidos por perito credenciado pelo CNAI e corretor registrado no
+              CRECI-MT.
             </p>
 
             {/* CTAs */}
