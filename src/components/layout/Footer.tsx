@@ -1,4 +1,5 @@
-import { MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 
 const QUICK_LINKS = [
   { label: 'Início', href: '#hero' },
@@ -31,8 +32,8 @@ const SOCIAL_LINKS = [
   {
     label: 'WhatsApp',
     href: 'https://wa.me/5566999852326',
-    icon: MessageCircle,
-    isSvg: false,
+    icon: WhatsAppIcon,
+    isSvg: true,
   },
   {
     label: 'Instagram',
@@ -133,7 +134,7 @@ export default function Footer() {
               <li>
                 <span className="flex items-center gap-2.5 text-sm text-brand-muted">
                   <MapPin size={15} className="text-brand-gold shrink-0" />
-                  Mato Grosso, Brasil
+                  Sorriso - MT e Região
                 </span>
               </li>
             </ul>

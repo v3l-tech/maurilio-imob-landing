@@ -1,4 +1,5 @@
-import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { useInView } from '../../hooks/useAnimations';
 import ContactForm from '../ui/ContactForm';
 
@@ -22,7 +23,7 @@ const CONTACT_CHANNELS = [
     href: '#',
   },
   {
-    icon: Phone,
+    icon: WhatsAppIcon,
     label: 'WhatsApp',
     value: '(66) 99985-2326',
     href: 'https://wa.me/5566999852326',
@@ -111,7 +112,7 @@ export default function Contato() {
                 className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/20"
                 id="contato-whatsapp-cta"
               >
-                <MessageCircle size={22} />
+                <WhatsAppIcon size={22} />
                 Conversar no WhatsApp
               </a>
             </div>
