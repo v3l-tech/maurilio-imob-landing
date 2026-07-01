@@ -43,12 +43,6 @@ const SOCIAL_LINKS = [
     icon: InstagramIcon,
     isSvg: true,
   },
-  {
-    label: 'LinkedIn',
-    href: '#',
-    icon: LinkedInIcon,
-    isSvg: true,
-  },
 ];
 
 export default function Footer() {
