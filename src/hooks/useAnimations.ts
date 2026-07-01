@@ -88,24 +88,41 @@ export function useActiveSection(sectionIds: string[]) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Find elements intersecting our top-of-screen threshold band
         const visible = entries.filter((e) => e.isIntersecting);
         if (visible.length > 0) {
-          // Pick the one with highest intersection ratio
+          // If multiple are visible in the band, pick the one closest to the top
           const best = visible.reduce((a, b) =>
-            a.intersectionRatio > b.intersectionRatio ? a : b
+            a.boundingClientRect.top < b.boundingClientRect.top ? b : a
           );
           setActiveSection(best.target.id);
         }
       },
-      { threshold: [0.2, 0.5], rootMargin: '-80px 0px 0px 0px' }
+      // Creates a narrow detection band: starts 80px from top (below header) and ends at 30% of screen height
+      { threshold: 0, rootMargin: '-80px 0px -70% 0px' }
     );
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+    const observeElements = () => {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    };
+
+    // Initial observation
+    observeElements();
+
+    // Setup MutationObserver to watch for dynamically added sections
+    const mutationObserver = new MutationObserver(() => {
+      observeElements();
     });
 
-    return () => observer.disconnect();
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, [sectionIds]);
 
   return activeSection;

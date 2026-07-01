@@ -6,6 +6,7 @@ const QUICK_LINKS = [
   { label: 'Início', href: '#hero' },
   { label: 'Sobre', href: '#historia' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Oportunidades', href: '#oportunidades' },
   { label: 'Valores', href: '#vmv' },
   { label: 'Contato', href: '#contato' },
 ];
@@ -103,6 +104,14 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li className="pt-2 mt-2 border-t border-brand-divider/30">
+                <a
+                  href="/admin"
+                  className="text-sm text-brand-gold/70 hover:text-brand-gold transition-colors duration-200"
+                >
+                  Área Restrita (Admin)
+                </a>
+              </li>
             </ul>
           </div>
 

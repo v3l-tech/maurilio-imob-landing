@@ -7,11 +7,12 @@ const NAV_ITEMS = [
   { label: 'Início', href: '#hero' },
   { label: 'Sobre', href: '#historia' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Oportunidades', href: '#oportunidades' },
   { label: 'Valores', href: '#vmv' },
   { label: 'Contato', href: '#contato' },
 ];
 
-const SECTION_IDS = ['hero', 'historia', 'servicos', 'vmv', 'contato'];
+const SECTION_IDS = ['hero', 'historia', 'servicos', 'oportunidades', 'vmv', 'contato'];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

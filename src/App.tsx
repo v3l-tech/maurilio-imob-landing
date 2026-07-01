@@ -1,26 +1,17 @@
-import Header from './components/layout/Header';
-import Hero from './components/sections/Hero';
-import Historia from './components/sections/Historia';
-import Servicos from './components/sections/Servicos';
-import VMV from './components/sections/VMV';
-import Contato from './components/sections/Contato';
-import Footer from './components/layout/Footer';
-import WhatsAppButton from './components/ui/WhatsAppButton';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import PropertyDetails from './pages/PropertyDetails';
+import Admin from './pages/Admin';
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-deep text-brand-text">
-      <Header />
-      <main>
-        <Hero />
-        <Historia />
-        <Servicos />
-        <VMV />
-        <Contato />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/imovel/:id" element={<PropertyDetails />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
